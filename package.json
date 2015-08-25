@@ -1,7 +1,7 @@
 {
   "name": "fast-scroll",
   "version": "0.0.0",
-  "description": "TODO",
+  "description": "Fast scoll is a very tiny extension for Google Chrome which allows you to scroll faster on web pages by pressing left CTRL during scroll.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
