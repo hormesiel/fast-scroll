@@ -1,0 +1,21 @@
+{
+  "name": "fast-scroll",
+  "description": "Fast scoll is a very tiny extension for Google Chrome which allows you to scroll faster on web pages by pressing left CTRL during scroll.",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/flawyte/fast-scroll",
+  "authors": [
+    "Mickaël Allonneau <mickael.allonneau@gmail.com> (https://flawyte.github.io/)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.4"
+  }
+}
