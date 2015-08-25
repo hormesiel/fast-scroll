@@ -1,0 +1,21 @@
+{
+  "author": "Mickaël Allonneau",
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["<all_urls>"],
+      "match_about_blank": true,
+      "js": [
+        "libs/jquery.js",
+        "index.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "default_locale": "en",
+  "description": "__MSG_description__",
+  "homepage_url": "https://flawyte.github.io/",
+  "manifest_version": 1,
+  "name": "Fast Scroll",
+  "version": "0.0.0"
+}
