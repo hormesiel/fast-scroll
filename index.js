@@ -1,15 +1,30 @@
+var scrollFactor;
+
+chrome.storage.sync.get({
+  scrollFactor: 3
+}, function(items) {
+  scrollFactor = items.scrollFactor;
+});
+
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+  scrollFactor = changes.scrollFactor.newValue;
+});
+
 window.addEventListener('wheel', function(e) {
   e.preventDefault();
 
-  var scrollFactor;
-
-  if (e.ctrlKey)
-    scrollFactor = 3;
-  else
-    scrollFactor = 1;
-
-  if (e.shiftKey) // Horizontal scroll
-    document.body.scrollLeft += e.deltaX * scrollFactor;
-  else // Verical scroll
-    document.body.scrollTop += e.deltaY * scrollFactor;
+   // Horizontal scroll
+  if (e.shiftKey) {
+    if (e.ctrlKey)
+      document.body.scrollLeft += e.deltaX * scrollFactor;
+    else
+      document.body.scrollLeft += e.deltaX;
+  }
+  // Verical scroll
+  else {
+    if (e.ctrlKey)
+      document.body.scrollTop += e.deltaY * scrollFactor;
+    else
+      document.body.scrollTop += e.deltaY;
+  }
 }, false);
