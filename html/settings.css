@@ -1,0 +1,10 @@
+.content {
+  background-color: #fff;
+  margin: auto;
+  max-width: 500px;
+  padding: 1em;
+}
+
+.content form > * {
+  width: 100%;
+}

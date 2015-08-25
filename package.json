@@ -10,6 +10,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "material-design-lite": "^1.0.4"
   }
 }
