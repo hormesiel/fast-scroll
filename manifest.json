@@ -3,17 +3,13 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "exclude_matches": [
-        "http://www.getmdl.io/*",
-        "https://atmospherejs.com/*"
-      ],
       "js": [
         "libs/jquery.js",
         "index.js"
       ],
       "matches": ["<all_urls>"],
       "match_about_blank": true,
-      "run_at": "document_start"
+      "run_at": "document_end"
     }
   ],
   "default_locale": "en",

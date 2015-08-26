@@ -1,5 +1,9 @@
 var scrollFactor;
 
+if (document.body.offsetHeight <= window.innerHeight) { // maybe web app with unscrollable body and overflow content
+  throw new Error("Fast Scroll Error: Web app detected. The extension won't work on this website.");
+}
+
 chrome.storage.sync.get({
   scrollFactor: 3
 }, function(items) {
@@ -16,15 +20,15 @@ window.addEventListener('wheel', function(e) {
    // Horizontal scroll
   if (e.shiftKey) {
     if (e.ctrlKey)
-      document.body.scrollLeft += e.deltaX * scrollFactor;
+      window.scrollBy(e.deltaX * scrollFactor, 0);
     else
-      document.body.scrollLeft += e.deltaX;
+      window.scrollBy(e.deltaX, 0);
   }
   // Verical scroll
   else {
     if (e.ctrlKey)
-      document.body.scrollTop += e.deltaY * scrollFactor;
+      window.scrollBy(0, e.deltaY * scrollFactor);
     else
-      document.body.scrollTop += e.deltaY;
+      window.scrollBy(0, e.deltaY);
   }
 }, false);
