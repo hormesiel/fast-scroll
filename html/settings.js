@@ -9,7 +9,6 @@ function onFormSubmit(e) {
 }
 
 function onPageLoaded() {
-
   form = document.querySelector('form');
 
   form.scrollFactor = form.querySelector('#scrollFactor');
