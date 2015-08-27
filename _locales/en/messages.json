@@ -1,6 +1,6 @@
 {
   "description": {
-    "description": "The extension's description.",
-    "message": "Fast scoll is a very tiny extension for Google Chrome which allows you to scroll faster on web pages by pressing left CTRL during scroll."
+    "description": "The extension's description",
+    "message": "Fast Scroll is a very tiny extension which increases scroll speed on web pages when left CTRL is pressed during scroll"
   }
 }
