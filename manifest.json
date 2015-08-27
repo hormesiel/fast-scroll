@@ -4,7 +4,6 @@
     {
       "all_frames": true,
       "js": [
-        "libs/jquery.js",
         "index.js"
       ],
       "matches": ["<all_urls>"],
