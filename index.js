@@ -1,20 +1,43 @@
+var compatible;
+var loaded = false;
 var scrollFactor;
 
-if (document.body.offsetHeight <= window.innerHeight) { // maybe web app with unscrollable body and overflow content
-  throw new Error("Fast Scroll Error: Web app detected. The extension won't work on this website.");
+function isWebsiteCompatible() {
+  var compatible;
+
+  window.scrollBy(0, 1);
+  compatible = (window.scrollY === 1);
+  window.scrollBy(0, -1);
+
+  return compatible;
 }
 
-chrome.storage.sync.get({
-  scrollFactor: 3
-}, function(items) {
-  scrollFactor = items.scrollFactor;
-});
+function loadSettings() {
+  chrome.storage.sync.get({
+    scrollFactor: 3
+  }, function(items) {
+    scrollFactor = items.scrollFactor;
+  });
 
-chrome.storage.onChanged.addListener(function(changes, namespace) {
-  scrollFactor = changes.scrollFactor.newValue;
-});
+  chrome.storage.onChanged.addListener(function(changes, namespace) {
+    scrollFactor = changes.scrollFactor.newValue;
+  });
+}
 
-window.addEventListener('wheel', function(e) {
+function onPageLoaded() {
+  compatible = compatible || isWebsiteCompatible();
+
+  if (compatible && !loaded) {
+    loaded = true;
+    loadSettings();
+    window.addEventListener('wheel', onWheelEvent, false);
+  }
+}
+
+function onWheelEvent(e) {
+  if (!compatible)
+    return;
+
   e.preventDefault();
 
    // Horizontal scroll
@@ -31,4 +54,6 @@ window.addEventListener('wheel', function(e) {
     else
       window.scrollBy(0, e.deltaY);
   }
-}, false);
+}
+
+window.addEventListener('load', onPageLoaded);
