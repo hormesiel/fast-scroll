@@ -15,6 +15,11 @@
   "default_locale": "en",
   "description": "__MSG_description__",
   "homepage_url": "https://flawyte.github.io/",
+  "icons": {
+    "16": "res/icon-16.png",
+    "48": "res/icon-48.png",
+    "128": "res/icon-128.png"
+  },
   "manifest_version": 2,
   "name": "Fast Scroll",
   "options_page": "html/settings.html",
