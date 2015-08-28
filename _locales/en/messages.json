@@ -2,5 +2,21 @@
   "description": {
     "description": "The extension's description",
     "message": "Fast Scroll is a very tiny extension which increases scroll speed on web pages when left CTRL is pressed during scroll"
+  },
+  "save": {
+    "description": "'Save' button's text",
+    "message": "Save"
+  },
+  "scrollFactorError": {
+    "description": "Error message for 'Scroll factor' value",
+    "message": "Should be a number greater than or equal to 1"
+  },
+  "scrollFactorLabel": {
+    "description": "Scroll speed multiplier when left CTRL is pressed",
+    "message": "Scroll factor"
+  },
+  "settings": {
+    "description": "Settings page title",
+    "message": "Settings"
   }
 }

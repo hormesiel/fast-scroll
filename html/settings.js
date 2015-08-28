@@ -1,6 +1,18 @@
 var settings = null;
 var form = null;
 
+function loadLanguage() {
+  var title = document.querySelector('#title');
+  var saveButton = document.querySelector('#saveButton');
+  var scrollFactorError = document.querySelector('#scrollFactorError');
+  var scrollFactorLabel = document.querySelector('#scrollFactorLabel');
+
+  saveButton.innerHTML = chrome.i18n.getMessage('save');
+  scrollFactorError.innerHTML = chrome.i18n.getMessage('scrollFactorError');
+  scrollFactorLabel.innerHTML = chrome.i18n.getMessage('scrollFactorLabel');
+  title.innerHTML = chrome.i18n.getMessage('settings');
+}
+
 function onFormSubmit(e) {
   e.preventDefault();
 
@@ -21,6 +33,7 @@ function onPageLoaded() {
   });
   form.addEventListener('submit', onFormSubmit);
 
+  loadLanguage();
   restoreOptions();
 }
 

@@ -10,14 +10,14 @@
 </head>
 <body>
   <div class="content">
-    <h3>Fast Scroll Settings</h3>
+    <h3 id="title"></h3>
     <form action="#">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" id="scrollFactor" pattern="[1-9]+(\.[0-9]+)?" type="text" />
-        <label class="mdl-textfield__label" for="scrollFactor">Scroll factor</label>
-        <span class="mdl-textfield__error">Should be a number greater than or equal to 1</span>
+        <label class="mdl-textfield__label" for="scrollFactor" id="scrollFactorLabel"></label>
+        <span class="mdl-textfield__error" id="scrollFactorError"></span>
       </div>
-      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="submit" disabled>Enregistrer</button>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="saveButton" type="submit" disabled></button>
     </form>
   </div>
   <script src="settings.js"></script>
