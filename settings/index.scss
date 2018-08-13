@@ -1,0 +1,26 @@
+@import "@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
+@import "@material/typography/mdc-typography";
+
+.content {
+  margin: auto;
+  max-width: 400px;
+}
+
+.mdc-button {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.mdc-text-field {
+  width: 100%;
+}
+
+.mdc-typography--headline4 {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}

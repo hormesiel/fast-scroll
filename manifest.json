@@ -21,11 +21,7 @@
   },
   "manifest_version": 2,
   "name": "Fast Scroll",
-  "options_page": "html/settings.html",
-  "options_ui": {
-    "page": "html/settings.html",
-    "chrome_style": false
-  },
+  "options_page": "settings/index.html",
   "permissions": [
     "storage"
   ],
