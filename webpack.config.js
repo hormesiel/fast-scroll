@@ -1,7 +1,8 @@
 module.exports = [{
   entry: ['./settings/index.scss', './settings/index.mjs'],
   output: {
-    filename: 'settings/index.js',
+    path: __dirname + '/build',
+    filename: 'settings/index.js'
   },
   module: {
     rules: [{
