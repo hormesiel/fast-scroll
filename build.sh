@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo ""
+echo "Building..."
+echo ""
+
 rm -rf build/
 mkdir build/
 
