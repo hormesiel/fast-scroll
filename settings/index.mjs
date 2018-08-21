@@ -17,4 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollFactor: textField.value // No need to cast it to a Number for multiplication to work
     });
   });
+
+  const title = document.querySelector('#title');
+  const textfieldLabel = document.querySelector('#label');
+  const button = document.querySelector('#button');
+
+  title.innerHTML = chrome.i18n.getMessage('settingsTitle');
+  textfieldLabel.innerHTML = chrome.i18n.getMessage('settingsTextFieldLabel');
+  button.innerHTML = chrome.i18n.getMessage('settingsSaveButtonLabel');
 });

@@ -3,11 +3,16 @@
     "description": "The extension's description",
     "message": "Fast Scroll is a tiny extension that allows you to scroll through web pages faster by pressing a key of your choice"
   },
-  "save": {
+
+  "settingsSaveButtonLabel": {
     "description": "Settings page's 'Save' button's label",
     "message": "Save"
   },
-  "settings": {
+  "settingsTextFieldLabel": {
+    "description": "Settings page's 'Scroll factor' text field's label",
+    "message": "Scroll speed multiplied by ..."
+  },
+  "settingsTitle": {
     "description": "Settings page's title",
     "message": "Settings"
   }
