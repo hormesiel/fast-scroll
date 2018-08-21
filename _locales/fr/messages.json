@@ -4,19 +4,11 @@
     "message": "Fast Scroll est une minuscule extension qui fait défiler les pages web plus rapidement quand la touche CTRL gauche est pressée"
   },
   "save": {
-    "description": "Texte du bouton 'Enregistrer'",
+    "description": "Texte du bouton 'Enregistrer' de la page des options",
     "message": "Enregistrer"
   },
-  "scrollFactorError": {
-    "description": "Message d'erreur pour la valeur 'Facteur de défilement'",
-    "message": "Doit être un nombre supérieur ou égal à 1"
-  },
-  "scrollFactorLabel": {
-    "description": "Multiplicateur de la vitesse de défilement quand CTRL gauche est pressée",
-    "message": "Facteur de défilement"
-  },
   "settings": {
-    "description": "Titre de la page des paramètres",
+    "description": "Titre de la page des options de l'extension",
     "message": "Paramètres"
   }
 }
