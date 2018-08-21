@@ -11,4 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     textField.value = items.scrollFactor;
     textField.disabled = false;
   });
+
+  document.querySelector('.mdc-button').addEventListener('click', () => {
+    chrome.storage.sync.set({
+      scrollFactor: textField.value // No need to cast it to a Number for multiplication to work
+    });
+  });
 });
