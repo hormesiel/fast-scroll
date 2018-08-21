@@ -1,7 +1,7 @@
 {
   "description": {
     "description": "The extension's description",
-    "message": "Fast Scroll is a very tiny extension which increases scroll speed on web pages when left CTRL is pressed during scroll"
+    "message": "Fast Scroll is a tiny extension that allows you to scroll through web pages faster by pressing a key of your choice"
   },
   "save": {
     "description": "Settings page's 'Save' button's label",

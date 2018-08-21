@@ -1,7 +1,7 @@
 {
   "description": {
     "description": "La description de l'extension",
-    "message": "Fast Scroll est une minuscule extension qui fait défiler les pages web plus rapidement quand la touche CTRL gauche est pressée"
+    "message": "Fast Scroll est une minuscule extension qui vous permet de faire défiler les pages web plus rapidement en pressant une touche de votre choix"
   },
   "save": {
     "description": "Texte du bouton 'Enregistrer' de la page des options",
