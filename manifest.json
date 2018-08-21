@@ -4,7 +4,7 @@
     {
       "all_frames": true,
       "js": [
-        "index2.js"
+        "index.js"
       ],
       "matches": ["<all_urls>"],
       "match_about_blank": true,

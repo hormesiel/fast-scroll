@@ -10,7 +10,7 @@ mkdir build/
 
 # Main files
 cp manifest.json build/
-cp index2.js build/
+cp index.js build/
 cp -r res build/
 cp -r _locales build/
 

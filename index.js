@@ -1,59 +1,34 @@
-var compatible;
-var loaded = false;
-var scrollFactor;
+let scrollFaster = false;
+let scrollFactor = 1;
 
-function isWebsiteCompatible() {
-  var compatible;
+// Get scroll multiplier value
 
-  window.scrollBy(0, 1);
-  compatible = (window.scrollY === 1);
-  window.scrollBy(0, -1);
+chrome.storage.sync.get({
+  scrollFactor: 3
+}, function(items) {
+  scrollFactor = items.scrollFactor;
+});
 
-  return compatible;
-}
+chrome.storage.onChanged.addListener((changes, areaName) => {
+  scrollFactor = changes.scrollFactor.newValue;
+});
 
-function loadSettings() {
-  chrome.storage.sync.get({
-    scrollFactor: 3
-  }, function(items) {
-    scrollFactor = items.scrollFactor;
-  });
+// Attach event listeners
 
-  chrome.storage.onChanged.addListener(function(changes, namespace) {
-    scrollFactor = changes.scrollFactor.newValue;
-  });
-}
-
-function onPageLoaded() {
-  compatible = compatible || isWebsiteCompatible();
-
-  if (compatible && !loaded) {
-    loaded = true;
-    loadSettings();
-    window.addEventListener('wheel', onWheelEvent, false);
-  }
-}
-
-function onWheelEvent(e) {
-  if (!compatible)
+window.addEventListener('wheel', event => {
+  if (!scrollFaster)
     return;
 
-  e.preventDefault();
+  event.preventDefault();
+  window.scrollBy(0, event.deltaY * scrollFactor);
+});
 
-   // Horizontal scroll
-  if (e.shiftKey) {
-    if (e.ctrlKey)
-      window.scrollBy(e.deltaX * scrollFactor, 0);
-    else
-      window.scrollBy(e.deltaX, 0);
-  }
-  // Verical scroll
-  else {
-    if (e.ctrlKey)
-      window.scrollBy(0, e.deltaY * scrollFactor);
-    else
-      window.scrollBy(0, e.deltaY);
-  }
-}
+window.addEventListener('keydown', event => {
+  if (event.code == 'ShiftLeft')
+    scrollFaster = true;
+});
 
-window.addEventListener('load', onPageLoaded);
+window.addEventListener('keyup', event => {
+  if (event.code == 'ShiftLeft')
+    scrollFaster = false;
+});
