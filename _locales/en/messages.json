@@ -13,7 +13,7 @@
     "message": "Save"
   },
   "settingsTextFieldLabel": {
-    "description": "Settings page's 'Scroll factor' text field's label",
+    "description": "Settings page's 'Scroll multiplier' text field's label",
     "message": "Scroll speed multiplied by ..."
   },
   "settingsTitle": {

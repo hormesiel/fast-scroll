@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll speed multiplier
   const scrollSpeedMultiplierTextField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
-  const scrollSpeedMultiplierLabel = document.querySelector('#scroll-multiplier-label');
+  const scrollSpeedMultiplierLabel = document.querySelector('#scroll-speed-multiplier-label');
   scrollSpeedMultiplierLabel.innerHTML = chrome.i18n.getMessage('settingsTextFieldLabel');
 
 
