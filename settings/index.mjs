@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Key to press
   const keyToPressTextField = new MDCTextField(document.querySelectorAll('.mdc-text-field')[1]);
 
+  const keyToPressLabel = document.querySelector('#key-to-press-label');
+  keyToPressLabel.innerHTML = chrome.i18n.getMessage('settingsKeyToPressLabel');
+
   const keyToPressInput = document.querySelector('#key-to-press');
   keyToPressInput.addEventListener('keydown', (event) => {
     event.preventDefault();

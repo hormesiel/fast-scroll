@@ -4,6 +4,10 @@
     "message": "Fast Scroll est une minuscule extension qui vous permet de faire défiler les pages web plus rapidement en pressant une touche de votre choix"
   },
 
+  "settingsKeyToPressLabel": {
+    "description": "Libellé du champ de texte 'Touche à appuyer' de la page des options",
+    "message": "Touche à appuyer"
+  },
   "settingsSaveButtonLabel": {
     "description": "Texte du bouton 'Enregistrer' de la page des options",
     "message": "Enregistrer"
