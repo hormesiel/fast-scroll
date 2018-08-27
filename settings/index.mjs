@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   button.innerHTML = chrome.i18n.getMessage('settingsSaveButtonLabel');
   button.addEventListener('click', () => {
     chrome.storage.sync.set({
-      scrollFactor: scrollSpeedMultiplierTextField.value, // No need to cast it to a Number for multiplication to work
+      scrollSpeedMultiplier: scrollSpeedMultiplierTextField.value, // No need to cast it to a Number for multiplication to work
       keyToPress: keyToPressTextField.value
     });
   });
@@ -50,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
   chrome.storage.sync.get({
     keyToPress: 'ShiftLeft',
     scrollFactor: 3,
+    scrollSpeedMultiplier: null,
   }, function(options) {
-    scrollSpeedMultiplierTextField.value = options.scrollFactor;
+    scrollSpeedMultiplierTextField.value = options.scrollSpeedMultiplier || options.scrollFactor;
     scrollSpeedMultiplierTextField.disabled = false;
 
     keyToPressTextField.value = options.keyToPress;

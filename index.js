@@ -6,6 +6,7 @@ let options;
 chrome.storage.sync.get({
   keyToPress: 'ShiftLeft',
   scrollFactor: 3,
+  scrollSpeedMultiplier: null,
 }, function(items) {
   options = items;
 });
@@ -13,8 +14,8 @@ chrome.storage.sync.get({
 chrome.storage.onChanged.addListener((changes, areaName) => {
   if (changes.keyToPress)
     options.keyToPress = changes.keyToPress.newValue;
-  if (changes.scrollFactor)
-    options.scrollFactor = changes.scrollFactor.newValue;
+  if (changes.scrollSpeedMultiplier)
+    options.scrollSpeedMultiplier = changes.scrollSpeedMultiplier.newValue;
 });
 
 // Attach event listeners
@@ -24,7 +25,7 @@ window.addEventListener('wheel', event => {
     return;
 
   event.preventDefault();
-  window.scrollBy(0, event.deltaY * options.scrollFactor);
+  window.scrollBy(0, event.deltaY * (options.scrollSpeedMultiplier || options.scrollFactor));
 });
 
 window.addEventListener('keydown', event => {
