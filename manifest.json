@@ -6,7 +6,7 @@
 
   // Recommended
   "default_locale": "en",
-  "description": "__MSG_description__",
+  "description": "__MSG_meta_description__",
 
   // Optional
   "author": "Mickaël Allonneau",

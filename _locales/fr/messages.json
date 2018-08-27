@@ -1,23 +1,23 @@
 {
-  "description": {
+  "meta_description": {
     "description": "La description de l'extension",
     "message": "Fast Scroll est une minuscule extension qui vous permet de faire défiler les pages web plus rapidement en pressant une touche de votre choix"
   },
 
-  "settingsKeyToPressLabel": {
-    "description": "Libellé du champ de texte 'Touche à appuyer' de la page des options",
-    "message": "Touche à appuyer"
+  "Settings_title": {
+    "description": "Titre de la page",
+    "message": "Paramètres"
   },
-  "settingsSaveButtonLabel": {
-    "description": "Texte du bouton 'Enregistrer' de la page des options",
+  "Settings_Button_label": {
+    "description": "Texte du bouton",
     "message": "Enregistrer"
   },
-  "settingsTextFieldLabel": {
-    "description": "Libellé du champ de texte 'Vitesse de défilement' de la page des options",
-    "message": "Vitesse de défilement multipliée par ..."
+  "Settings_KeyToPress_label": {
+    "description": "Libellé du champ de texte qui permet de définir la touche à enfoncer",
+    "message": "Touche sur laquelle appuyer"
   },
-  "settingsTitle": {
-    "description": "Titre de la page des options de l'extension",
-    "message": "Paramètres"
+  "Settings_ScrollSpeedMultiplier_label": {
+    "description": "Libellé du champ de texte qui permet de définir le multiplicateur de la vitesse de défilement",
+    "message": "Vitesse de défilement multipliée par ..."
   }
 }
