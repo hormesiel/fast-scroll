@@ -18,6 +18,6 @@
   },
   "Settings_ScrollSpeedMultiplier_label": {
     "description": "Label for the text field that allows to define the scroll speed multiplier",
-    "message": "Scroll speed multiplied by ..."
+    "message": "Multiply scroll speed by"
   }
 }

@@ -18,6 +18,6 @@
   },
   "Settings_ScrollSpeedMultiplier_label": {
     "description": "Libellé du champ de texte qui permet de définir le multiplicateur de la vitesse de défilement",
-    "message": "Vitesse de défilement multipliée par ..."
+    "message": "Multiplier la vitesse de défilement par"
   }
 }
