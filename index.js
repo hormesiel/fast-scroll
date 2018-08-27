@@ -1,16 +1,20 @@
 let scrollFaster = false;
-let scrollFactor = 1;
+let options;
 
-// Get scroll multiplier value
+// Get options values
 
 chrome.storage.sync.get({
-  scrollFactor: 3
+  keyToPress: 'ShiftLeft',
+  scrollFactor: 3,
 }, function(items) {
-  scrollFactor = items.scrollFactor;
+  options = items;
 });
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
-  scrollFactor = changes.scrollFactor.newValue;
+  if (changes.keyToPress)
+    options.keyToPress = changes.keyToPress.newValue;
+  if (changes.scrollFactor)
+    options.scrollFactor = changes.scrollFactor.newValue;
 });
 
 // Attach event listeners
@@ -20,15 +24,19 @@ window.addEventListener('wheel', event => {
     return;
 
   event.preventDefault();
-  window.scrollBy(0, event.deltaY * scrollFactor);
+  window.scrollBy(0, event.deltaY * options.scrollFactor);
 });
 
 window.addEventListener('keydown', event => {
-  if (event.code == 'ShiftLeft')
+  if (event.code == options.keyToPress) {
+    event.preventDefault();
     scrollFaster = true;
+  }
 });
 
 window.addEventListener('keyup', event => {
-  if (event.code == 'ShiftLeft')
+  if (event.code == options.keyToPress) {
+    event.preventDefault();
     scrollFaster = false;
+  }
 });
