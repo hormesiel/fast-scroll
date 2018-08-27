@@ -1,7 +1,7 @@
 {
   "name": "fast-scroll",
   "version": "1.0.0",
-  "description": "Fast Scroll is a very tiny extension which increases scroll speed on web pages when left SHIFT is pressed during scroll",
+  "description": "Fast Scroll is a tiny extension that allows you to scroll through web pages faster by pressing a key of your choice",
   "main": "index2.js",
   "repository": "git@github.com:flawyte/fast-scroll.git",
   "author": "Mickaël Allonneau <mickael.allonneau@gmail.com>",
