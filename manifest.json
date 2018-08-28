@@ -1,14 +1,11 @@
 {
-  // Required
   "manifest_version": 2,
   "name": "Fast Scroll",
   "version": "2.0",
 
-  // Recommended
   "default_locale": "en",
   "description": "__MSG_meta_description__",
 
-  // Optional
   "author": "Mickaël Allonneau",
   "content_scripts": [
     {
