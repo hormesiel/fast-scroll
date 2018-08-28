@@ -1,4 +1,5 @@
 import {MDCRipple} from '@material/ripple';
+import {MDCSelect} from '@material/select';
 import {MDCTextField} from '@material/textfield';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,20 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // Key to press
-  const keyToPressTextField = new MDCTextField(document.querySelectorAll('.mdc-text-field')[1]);
+  const keyToPressSelect = new MDCSelect(document.querySelector('.mdc-select'));
 
   const keyToPressLabel = document.querySelector('#key-to-press-label');
   keyToPressLabel.innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_label');
-
-  const keyToPressInput = document.querySelector('#key-to-press');
-  keyToPressInput.addEventListener('keydown', (event) => {
-    event.preventDefault();
-
-    if (event.code == 'ControlLeft'
-      || event.code == 'ShiftLeft'
-      || event.code == 'AltLeft')
-      keyToPressInput.value = event.code;
-  });
 
 
   // (save button)
@@ -38,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   button.addEventListener('click', () => {
     chrome.storage.sync.set({
       scrollSpeedMultiplier: scrollSpeedMultiplierTextField.value, // No need to cast it to a Number for multiplication to work
-      keyToPress: keyToPressTextField.value
+      keyToPress: keyToPressSelect.value
     });
   });
 
@@ -55,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollSpeedMultiplierTextField.value = options.scrollSpeedMultiplier || options.scrollFactor;
     scrollSpeedMultiplierTextField.disabled = false;
 
-    keyToPressTextField.value = options.keyToPress;
-    keyToPressTextField.disabled = false;
+    keyToPressSelect.value = options.keyToPress;
   });
 });

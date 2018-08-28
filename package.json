@@ -9,6 +9,7 @@
   "private": true,
   "dependencies": {
     "@material/button": "^0.38.0",
+    "@material/select": "^0.39.0",
     "@material/textfield": "^0.38.0",
     "@material/typography": "^0.38.0"
   },
