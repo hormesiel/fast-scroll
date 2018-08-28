@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const keyToPressLabel = document.querySelector('#key-to-press-label');
   keyToPressLabel.innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_label');
 
+  document.querySelector('#alt-left-option').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_AltLeft');
+  document.querySelector('#control-left-option').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_ControlLeft');
+  document.querySelector('#shift-left-option').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_ShiftLeft');
+
 
   // (save button)
   const button = document.querySelector('#button');

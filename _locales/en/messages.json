@@ -16,6 +16,18 @@
     "description": "Label for the text field that allows to define the key to press",
     "message": "Key to press"
   },
+  "Settings_KeyToPress_AltLeft": {
+    "description": "Left Alt key's name",
+    "message": "Left Alt"
+  },
+  "Settings_KeyToPress_ControlLeft": {
+    "description": "Left Control key's name",
+    "message": "Left Ctrl"
+  },
+  "Settings_KeyToPress_ShiftLeft": {
+    "description": "Left Shift key's name",
+    "message": "Left Shift"
+  },
   "Settings_ScrollSpeedMultiplier_label": {
     "description": "Label for the text field that allows to define the scroll speed multiplier",
     "message": "Multiply scroll speed by"
