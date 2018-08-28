@@ -18,6 +18,8 @@
     "webpack-dev-server": "2"
   },
   "scripts": {
-    "start": "webpack-dev-server"
+    "b": "./build.sh",
+    "bw": "./build-and-watch.sh",
+    "s": "webpack-dev-server"
   }
 }
