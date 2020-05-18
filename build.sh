@@ -7,7 +7,6 @@ echo ""
 rm -rf build/
 mkdir build/
 
-
 # Main files
 cp manifest.json build/
 cp index.js build/
@@ -19,4 +18,4 @@ mkdir build/settings/
 cp settings/index.html build/settings/
 
 # Sass -> CSS && ES6 -> ES5
-./node_modules/webpack/bin/webpack.js
+rollup -c

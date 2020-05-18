@@ -7,27 +7,26 @@
   <script src='index.js'></script>
 </head>
 
-<body class='mdc-typography'>
-  <div class='content'>
-    <h1 id='title' class='mdc-typography--headline4'></h1>
+<body>
+  <div class='Content'>
+    <h1 id='title'></h1>
 
-    <div class='mdc-text-field mdc-text-field--box'>
-      <input type='number' min='1' id='scroll-speed-multiplier' class='mdc-text-field__input' disabled>
-      <label id='scroll-speed-multiplier-label' class='mdc-floating-label' for='scroll-speed-multiplier'></label>
-      <div class='mdc-line-ripple'></div>
+    <div>
+      <input id='scrollSpeedMultiplier' type='number' min='1' disabled>
+      <label id='scrollSpeedMultiplierLabel' for='scrollSpeedMultiplier'></label>
     </div>
 
-    <div class='mdc-select mdc-select--box'>
-      <select id='select' class='mdc-select__native-control'>
-        <option id='alt-left-option' value='AltLeft'></option>
-        <option id='control-left-option' value='ControlLeft'></option>
-        <option id='shift-left-option' value='ShiftLeft'></option>
+    <div>
+      <select id='keyToPress'>
+        <option id='altLeftOption' value='AltLeft'></option>
+        <option id='controlLeftOption' value='ControlLeft'></option>
+        <option id='shiftLeftOption' value='ShiftLeft'></option>
       </select>
-      <label id='key-to-press-label' class='mdc-floating-label'></label>
-      <div class='mdc-line-ripple'></div>
+      <label id='keyToPressLabel'></label>
+      <div></div>
     </div>
 
-    <button id='button' class='mdc-button mdc-button--unelevated'></button>
+    <button id='button'></button>
   </div>
 </body>
 

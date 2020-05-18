@@ -1,33 +1,33 @@
-import {MDCRipple} from '@material/ripple';
-import {MDCSelect} from '@material/select';
-import {MDCTextField} from '@material/textfield';
+import './index.scss';
+
+//
+// Main function
+//
 
 document.addEventListener('DOMContentLoaded', () => {
-  // (page title)
+  // Page title
+
   const title = document.querySelector('#title');
   title.innerHTML = chrome.i18n.getMessage('Settings_title');
 
-
   // Scroll speed multiplier
-  const scrollSpeedMultiplierTextField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
-  const scrollSpeedMultiplierLabel = document.querySelector('#scroll-speed-multiplier-label');
+  const scrollSpeedMultiplierTextField = document.querySelector('#scrollSpeedMultiplier');
+  const scrollSpeedMultiplierLabel = document.querySelector('#scrollSpeedMultiplierLabel');
   scrollSpeedMultiplierLabel.innerHTML = chrome.i18n.getMessage('Settings_ScrollSpeedMultiplier_label');
 
-
-
   // Key to press
-  const keyToPressSelect = new MDCSelect(document.querySelector('.mdc-select'));
 
-  const keyToPressLabel = document.querySelector('#key-to-press-label');
+  const keyToPressSelect = document.querySelector('#keyToPress');
+  const keyToPressLabel = document.querySelector('#keyToPressLabel');
   keyToPressLabel.innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_label');
 
-  document.querySelector('#alt-left-option').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_AltLeft');
-  document.querySelector('#control-left-option').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_ControlLeft');
-  document.querySelector('#shift-left-option').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_ShiftLeft');
+  document.querySelector('#altLeftOption').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_AltLeft');
+  document.querySelector('#controlLeftOption').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_ControlLeft');
+  document.querySelector('#shiftLeftOption').innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_ShiftLeft');
 
+  // Save button
 
-  // (save button)
   const button = document.querySelector('#button');
   button.innerHTML = chrome.i18n.getMessage('Settings_Button_label');
   button.addEventListener('click', () => {
@@ -37,10 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  MDCRipple.attachTo(button);
-
-
-  // (display saved/default options values)
+  // Populate form with saved / default values
 
   chrome.storage.sync.get({
     keyToPress: 'ShiftLeft',

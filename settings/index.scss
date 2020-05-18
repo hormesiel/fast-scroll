@@ -1,37 +1,4 @@
-@import '@material/button/mdc-button';
-@import '@material/select/mdc-select';
-@import '@material/textfield/mdc-text-field';
-@import '@material/typography/mdc-typography';
-
-.content {
+.Content {
   margin: auto;
   max-width: 400px;
-}
-
-.mdc-button {
-  display: block;
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.mdc-select {
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-  width: 100%;
-
-  select {
-    -webkit-appearance: none; /* hides the native dropdown arrow */
-  }
-}
-
-.mdc-text-field {
-  width: 100%;
-}
-
-.mdc-typography--headline4 {
-  text-align: center;
-}
-
-body {
-  margin: 0;
 }
