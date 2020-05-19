@@ -1,8 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve';
 import scss from 'rollup-plugin-scss';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
-  input: 'settings/index.js',
+  input: 'settings/index.ts',
   output: {
     file: 'build/settings/index.js',
     format: 'iife'
@@ -10,5 +11,6 @@ export default {
   plugins: [
     resolve(),
     scss(),
+    typescript(),
   ]
 };

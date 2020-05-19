@@ -1,5 +1,7 @@
 import './index.scss';
 
+declare const chrome;
+
 //
 // Main function
 //
@@ -12,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll speed multiplier
 
-  const scrollSpeedMultiplierTextField = document.querySelector('#scrollSpeedMultiplier');
+  const scrollSpeedMultiplierTextField = document.querySelector('#scrollSpeedMultiplier') as HTMLInputElement;
   const scrollSpeedMultiplierLabel = document.querySelector('#scrollSpeedMultiplierLabel');
   scrollSpeedMultiplierLabel.innerHTML = chrome.i18n.getMessage('Settings_ScrollSpeedMultiplier_label');
 
   // Key to press
 
-  const keyToPressSelect = document.querySelector('#keyToPress');
+  const keyToPressSelect = document.querySelector('#keyToPress') as HTMLSelectElement;
   const keyToPressLabel = document.querySelector('#keyToPressLabel');
   keyToPressLabel.innerHTML = chrome.i18n.getMessage('Settings_KeyToPress_label');
 
