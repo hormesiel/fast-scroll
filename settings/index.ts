@@ -1,22 +1,7 @@
-import './index.scss';
-
 declare const chrome;
 
-//
-// Types
-//
-
-enum KeyToPress {
-  AltLeft = 'AltLeft',
-  ControlLeft = 'ControlLeft',
-  ShiftLeft = 'ShiftLeft',
-}
-
-interface Settings {
-  keyToPress: KeyToPress;
-  scrollFactor: number; // replaced by `scrollSpeedMultiplier`
-  scrollSpeedMultiplier: number;
-}
+import {KeyToPress, Settings} from '../types';
+import './index.scss';
 
 //
 // Variables
