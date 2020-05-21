@@ -14,4 +14,4 @@ mkdir build/settings/
 cp settings/index.html build/settings/
 
 # Compile code
-rollup -c
+rollup -c $1
