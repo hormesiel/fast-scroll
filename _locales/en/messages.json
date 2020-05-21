@@ -24,10 +24,6 @@
     "description": "Left Control key's name",
     "message": "Left Ctrl"
   },
-  "Settings_KeyToPress_ShiftLeft": {
-    "description": "Left Shift key's name",
-    "message": "Left Shift"
-  },
   "Settings_ScrollSpeedMultiplier_label": {
     "description": "Label for the text field that allows to define the scroll speed multiplier",
     "message": "Multiply scroll speed by"

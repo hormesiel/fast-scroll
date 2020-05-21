@@ -1,7 +1,7 @@
 import {KeyToPress, Settings} from './types';
 
 const defaultSettings: Settings = {
-  keyToPress: KeyToPress.ShiftLeft,
+  keyToPress: KeyToPress.AltLeft,
   scrollSpeedMultiplier: 3,
 };
 

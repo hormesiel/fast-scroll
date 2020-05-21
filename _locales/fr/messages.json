@@ -24,10 +24,6 @@
     "description": "Nom de la touche Ctrl Gauche",
     "message": "Ctrl Gauche"
   },
-  "Settings_KeyToPress_ShiftLeft": {
-    "description": "Nom de la touche Maj Gauche",
-    "message": "Maj Gauche"
-  },
   "Settings_ScrollSpeedMultiplier_label": {
     "description": "Libellé du champ de texte qui permet de définir le multiplicateur de la vitesse de défilement",
     "message": "Multiplier la vitesse de défilement par"
