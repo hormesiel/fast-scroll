@@ -6,6 +6,5 @@ export enum KeyToPress {
 
 export interface Settings {
   keyToPress: KeyToPress;
-  scrollFactor: number; // replaced by `scrollSpeedMultiplier`
   scrollSpeedMultiplier: number;
 }

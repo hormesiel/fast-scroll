@@ -23,7 +23,7 @@ window.addEventListener('wheel', event => {
     return;
 
   event.preventDefault();
-  window.scrollBy(0, event.deltaY * (settings.scrollSpeedMultiplier || settings.scrollFactor));
+  window.scrollBy(0, event.deltaY * settings.scrollSpeedMultiplier);
 });
 
 window.addEventListener('keydown', event => {

@@ -9,7 +9,6 @@ import './index.scss';
 
 const defaultSettings: Settings = {
   keyToPress: KeyToPress.ShiftLeft,
-  scrollFactor: 3,
   scrollSpeedMultiplier: 3,
 };
 
@@ -60,14 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Populate form with saved / default values
 
   chrome.storage.sync.get(defaultSettings, function(settings) {
-    scrollSpeedMultiplierTextField.value = settings.scrollSpeedMultiplier || settings.scrollFactor;
+    scrollSpeedMultiplierTextField.value = settings.scrollSpeedMultiplier;
     scrollSpeedMultiplierTextField.disabled = false;
-
     keyToPressSelect.value = settings.keyToPress;
 
     // Keep a reference to current settings to enable / disable the 'Save' button based on form changes
     Object.assign(savedSettings, settings);
-
     // Cast `scrollSpeedMultiplier` to a Number since previous versions stored a String
     savedSettings.scrollSpeedMultiplier = Number(savedSettings.scrollSpeedMultiplier);
   });
@@ -80,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function getFormValues(scrollSpeedMultiplierTextField: HTMLInputElement, keyToPressSelect: HTMLSelectElement): Settings {
   return {
     keyToPress: KeyToPress[keyToPressSelect.value],
-    scrollFactor: Number(scrollSpeedMultiplierTextField.value),
     scrollSpeedMultiplier: Number(scrollSpeedMultiplierTextField.value),
   };
 }
