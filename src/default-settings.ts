@@ -1,9 +1,9 @@
-import {KeyToPress, Settings} from './types';
+import { Settings } from './types';
 
 const defaultSettings: Settings = {
-  invertBehavior: false,
-  keyToPress: KeyToPress.AltLeft,
+  mode: Settings.Mode.OnTriggerKeyPressed,
   scrollSpeedMultiplier: 3,
+  triggerKey: Settings.TriggerKey.AltLeft,
 };
 
 export default defaultSettings;
