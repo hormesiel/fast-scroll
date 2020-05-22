@@ -1,17 +1,20 @@
 #!/bin/bash
 
+builddir=_build/
+srcdir=src/
+
 # Clean old builds
-rm -rf build/
-mkdir build/
+rm -rf $builddir
+mkdir $builddir
 
 # Copy main files
-cp manifest.json build/
-cp -r res build/
-cp -r _locales build/
+cp $srcdir/manifest.json $builddir
+cp -r $srcdir/res/ $builddir
+cp -r $srcdir/_locales $builddir
 
 # Copy settings files
-mkdir build/settings/
-cp settings/index.html build/settings/
+mkdir $builddir/settings
+cp $srcdir/settings/index.html $builddir/settings/
 
 # Compile code
-rollup -c $1
+node node_modules/rollup/dist/bin/rollup -c $1 # '$1' equals '--watch' when provided

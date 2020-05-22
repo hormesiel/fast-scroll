@@ -10,6 +10,7 @@
     "@types/jest": "^25.2.3",
     "jest": "^26.0.1",
     "rollup": "^2.10.4",
+    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-scss": "^2.5.0",
     "ts-jest": "^26.0.0",
     "tslib": "^2.0.0",
