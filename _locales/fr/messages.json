@@ -12,6 +12,14 @@
     "description": "Texte du bouton",
     "message": "Enregistrer"
   },
+  "Settings_InvertBehavior_label": {
+    "description": "Libellé de la checkbox qui permet d'inverser le comportement de l'extension",
+    "message": "Inverser le comportement"
+  },
+  "Settings_InvertBehavior_description": {
+    "description": "Description du comportement de l'extension lorsque cette checkbox est cochée",
+    "message": "Toujours faire défiler plus vite par défaut, et rétablir la vitesse normale de défilement quand la touche sélectionnée est enfoncée"
+  },
   "Settings_KeyToPress_label": {
     "description": "Libellé du champ de texte qui permet de définir la touche à enfoncer",
     "message": "Touche sur laquelle appuyer"

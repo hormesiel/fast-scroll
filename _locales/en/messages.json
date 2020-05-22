@@ -12,6 +12,14 @@
     "description": "Button's label",
     "message": "Save"
   },
+  "Settings_InvertBehavior_label": {
+    "description": "Label of the checkbox which allows to invert the extension's behavior",
+    "message": "Invert behavior"
+  },
+  "Settings_InvertBehavior_description": {
+    "description": "Description of the extension's behavior when this checkbox is checked",
+    "message": "Always scroll faster by default, and scroll at normal speed when the selected key is pressed"
+  },
   "Settings_KeyToPress_label": {
     "description": "Label for the text field that allows to define the key to press",
     "message": "Key to press"

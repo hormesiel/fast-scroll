@@ -4,6 +4,7 @@ export enum KeyToPress {
 }
 
 export interface Settings {
+  invertBehavior: boolean;
   keyToPress: KeyToPress;
   scrollSpeedMultiplier: number;
 }
