@@ -22,6 +22,7 @@ const overflowValuesThatEnableScrollbarsOnContentElements = ['auto', 'overlay', 
 //
 
 loadSettings(() => {
+  attachPageFocusLossListener();
   attachKeysListeners();
   attachWheelListener();
 });
@@ -29,6 +30,12 @@ loadSettings(() => {
 //
 // Helpers
 //
+
+function attachPageFocusLossListener() {
+  /* clear pressed keys when the page loses focus, because by default they stay pressed when tab-switching to another
+  OS window, which causes unexpected scrolling behavior */
+  window.addEventListener('blur', () => pressedKeys.clear());
+}
 
 function attachKeysListeners() {
   window.addEventListener('keydown', event => {
