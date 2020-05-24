@@ -93,7 +93,8 @@ function loadSettings(callback: () => void) {
 
 function onWheelModeAlways(event: WheelEvent) {
   if (triggerKeyIsPressed)
-    handleScroll(event, 'default');
+    if (settings.triggerKey === Settings.TriggerKey.ControlLeft)
+      handleScroll(event, 'default'); // handle normal scroll by ourself since by default ControlLeft is used to zoom in/out on the page
   else
     handleScroll(event, 'custom');
 }
