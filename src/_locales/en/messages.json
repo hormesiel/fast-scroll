@@ -8,32 +8,52 @@
     "description": "Page's title",
     "message": "Settings"
   },
-  "Settings_Button_label": {
-    "description": "Button's label",
+  "Settings_Mode_label": {
+    "description": "Label for the dropdown menu that allows to select the extension's default behavior",
+    "message": "Increase scroll speed"
+  },
+  "Settings_Mode_Always_label": {
+    "description": "Label for the dropdown menu item to always scroll faster",
+    "message": "Always"
+  },
+  "Settings_Mode_Always_description": {
+    "description": "Description for the dropdown menu item to always scroll faster",
+    "message": "In this mode, the scroll speed will always be increased except when the 'Key to press' is pressed."
+  },
+  "Settings_Mode_Always_warning": {
+    "description": "Warning for the dropdown menu item to always scroll faster",
+    "message": "Warning : This might not work on some websites and break scrolling completely. In this case, you can add these websites to the Excluded websites list below."
+  },
+  "Settings_Mode_OnTriggerKeyPressed_label": {
+    "description": "Label for the dropdown menu item to scroll faster only when the trigger key is pressed",
+    "message": "When the 'Key to press' is pressed"
+  },
+  "Settings_Mode_OnTriggerKeyPressed_description": {
+    "description": "Description for the dropdown menu item to scroll faster only when the trigger key is pressed",
+    "message": "In this mode, the scroll speed will be increased only when the 'Key to press' is pressed."
+  },
+  "Settings_SaveButton_label": {
+    "description": "Save button's label",
     "message": "Save"
-  },
-  "Settings_InvertBehavior_label": {
-    "description": "Label of the checkbox which allows to invert the extension's behavior",
-    "message": "Invert behavior"
-  },
-  "Settings_InvertBehavior_description": {
-    "description": "Description of the extension's behavior when this checkbox is checked",
-    "message": "Always scroll faster by default, and scroll at normal speed when the selected key is pressed"
-  },
-  "Settings_KeyToPress_label": {
-    "description": "Label for the text field that allows to define the key to press",
-    "message": "Key to press"
-  },
-  "Settings_KeyToPress_AltLeft": {
-    "description": "Left Alt key's name",
-    "message": "Left Alt"
-  },
-  "Settings_KeyToPress_ControlLeft": {
-    "description": "Left Control key's name",
-    "message": "Left Ctrl"
   },
   "Settings_ScrollSpeedMultiplier_label": {
     "description": "Label for the text field that allows to define the scroll speed multiplier",
     "message": "Multiply scroll speed by"
+  },
+  "Settings_TriggerKey_label": {
+    "description": "Label for the dropdown menu that allows to define the trigger key",
+    "message": "Key to press"
+  },
+  "Settings_TriggerKey_AltLeft": {
+    "description": "Left Alt key's name",
+    "message": "Left Alt"
+  },
+  "Settings_TriggerKey_ControlLeft": {
+    "description": "Left Control key's name",
+    "message": "Left Ctrl"
+  },
+  "Settings_TriggerKey_ControlLeft_warning": {
+    "description": "Left Control key's warning messsage",
+    "message": "Warning : This will override this key's default behavior, which allows you to zoom in / out on websites using the mouse's wheel."
   }
 }

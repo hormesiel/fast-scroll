@@ -1,4 +1,13 @@
-.Content {
+.Warning {
+  color: orange;
+  display: none;
+
+  &.is-visible {
+    display: inherit;
+  }
+}
+
+#content {
   margin: auto;
   max-width: 400px;
 }

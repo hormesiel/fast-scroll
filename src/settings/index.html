@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
-  <title>Settings - Fast Scroll</title>
 
-  <link rel='stylesheet' href='index.css'>
-  <script src='index.js'></script>
-</head>
+  <head>
+    <meta charset='utf-8'>
+    <title>Settings - Fast Scroll</title>
 
-<body>
-  <div class='Content'>
-    <h1 id='title'></h1>
+    <link rel='stylesheet' href='index.css'>
+    <script src='index.js'></script>
+  </head>
 
-    <div>
-      <input id='scrollSpeedMultiplier' type='number' min='1' disabled>
-      <label id='scrollSpeedMultiplierLabel' for='scrollSpeedMultiplier'></label>
+  <body>
+    <div id='content'>
+      <h1 id='title'></h1>
+
+      <!-- Scroll speed multiplier -->
+      <div>
+        <label id='scrollSpeedMultiplierLabel' for='scrollSpeedMultiplier'></label>
+        <input id='scrollSpeedMultiplier' type='number' min='1' disabled>
+      </div>
+
+      <!-- Mode -->
+      <div>
+        <label id='modeLabel'></label>
+        <select id='mode' disabled>
+          <option id='modeOnTriggerKeyPressed' value='OnTriggerKeyPressed'></option>
+          <option id='modeAlways' value='Always'></option>
+        </select>
+        <p id='modeDescription'></p>
+        <p id='modeWarning' class='Warning'></p>
+      </div>
+
+      <!-- Trigger key -->
+      <div>
+        <label id='triggerKeyLabel'></label>
+        <select id='triggerKey' disabled>
+          <option id='triggerKeyAltLeftOptionLabel' value='AltLeft'></option>
+          <option id='triggerKeyControlLeftOptionLabel' value='ControlLeft'></option>
+        </select>
+        <p id='triggerKeyWarning' class='Warning'></p>
+      </div>
+
+      <button id='saveButton' disabled></button>
     </div>
-
-    <div>
-      <select id='keyToPress'>
-        <option id='none' value='none' disabled></option>
-        <option id='altLeftOption' value='AltLeft'></option>
-        <option id='controlLeftOption' value='ControlLeft'></option>
-      </select>
-      <label id='keyToPressLabel'></label>
-      <div></div>
-    </div>
-
-    <div>
-      <input id='invertBehaviorCheckbox' type='checkbox'>
-      <label id='invertBehaviorLabel' for='invertBehaviorCheckbox'></label>
-    </div>
-
-    <button id='button' disabled></button>
-  </div>
-</body>
+  </body>
 
 </html>

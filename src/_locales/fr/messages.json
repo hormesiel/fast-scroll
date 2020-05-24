@@ -8,32 +8,52 @@
     "description": "Titre de la page",
     "message": "Paramètres"
   },
-  "Settings_Button_label": {
-    "description": "Texte du bouton",
+  "Settings_Mode_label": {
+    "description": "Libellé pour le menu déroulant qui permet de sélectionner le comportement par défaut de l'extension",
+    "message": "Augmenter la vitesse de défilement"
+  },
+  "Settings_Mode_Always_label": {
+    "description": "Libellé pour l'élément du menu déroulant pour toujours faire défiler plus vite",
+    "message": "Toujours"
+  },
+  "Settings_Mode_Always_description": {
+    "description": "Description pour l'élément du menu déroulant pour toujours faire défiler plus vite",
+    "message": "Dans ce mode, la vitesse de défilement sera toujours augmentée sauf lorsque la 'Touche sur laquelle appuyer' est enfoncée"
+  },
+  "Settings_Mode_Always_warning": {
+    "description": "Avertissement pour l'élément du menu déroulant pour toujours faire défiler plus vite",
+    "message": "Attention : Cela pourrait ne pas fonctionner sur certains sites et empêcher de faire défiler la page. Dans ce cas, vous pouvez ajouter ces sites à la liste des Sites exclus ci-dessous."
+  },
+  "Settings_Mode_OnTriggerKeyPressed_label": {
+    "description": "Libellé pour l'élement du menu déroulant pour faire défiler plus vite lorsque la touche de déclenchement est enfoncée",
+    "message": "Lorsque la 'Touche sur laquelle appuyer' est enfoncée"
+  },
+  "Settings_Mode_OnTriggerKeyPressed_description": {
+    "description": "Description pour l'élement du menu déroulant pour faire défiler plus vite lorsque la touche de déclenchement est enfoncée",
+    "message": "Dans ce mode, la vitesse de défilement sera augmentée uniquement lorsque la 'Touche sur laquelle appuyer' est enfoncée"
+  },
+  "Settings_SaveButton_label": {
+    "description": "Libellé du bouton Enregistrer",
     "message": "Enregistrer"
-  },
-  "Settings_InvertBehavior_label": {
-    "description": "Libellé de la checkbox qui permet d'inverser le comportement de l'extension",
-    "message": "Inverser le comportement"
-  },
-  "Settings_InvertBehavior_description": {
-    "description": "Description du comportement de l'extension lorsque cette checkbox est cochée",
-    "message": "Toujours faire défiler plus vite par défaut, et rétablir la vitesse normale de défilement quand la touche sélectionnée est enfoncée"
-  },
-  "Settings_KeyToPress_label": {
-    "description": "Libellé du champ de texte qui permet de définir la touche à enfoncer",
-    "message": "Touche sur laquelle appuyer"
-  },
-  "Settings_KeyToPress_AltLeft": {
-    "description": "Nom de la touche Alt Gauche",
-    "message": "Alt Gauche"
-  },
-  "Settings_KeyToPress_ControlLeft": {
-    "description": "Nom de la touche Ctrl Gauche",
-    "message": "Ctrl Gauche"
   },
   "Settings_ScrollSpeedMultiplier_label": {
     "description": "Libellé du champ de texte qui permet de définir le multiplicateur de la vitesse de défilement",
     "message": "Multiplier la vitesse de défilement par"
+  },
+  "Settings_TriggerKey_label": {
+    "description": "Libellé du champ de texte qui permet de définir la touche à enfoncer",
+    "message": "Touche sur laquelle appuyer"
+  },
+  "Settings_TriggerKey_AltLeft": {
+    "description": "Nom de la touche Alt Gauche",
+    "message": "Alt Gauche"
+  },
+  "Settings_TriggerKey_ControlLeft": {
+    "description": "Nom de la touche Ctrl Gauche",
+    "message": "Ctrl Gauche"
+  },
+  "Settings_TriggerKey_ControlLeft_warning": {
+    "description": "Avertissement de la touche Ctrl Gauche",
+    "message": "Attention : Cela va écraser le comportement par défaut de cette touche, qui permet de zoomer / dézoomer sur les sites web à l'aide la molette"
   }
 }
