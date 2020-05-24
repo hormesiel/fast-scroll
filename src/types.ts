@@ -18,3 +18,5 @@ export class Settings {
   scrollSpeedMultiplier: number;
   triggerKey: Settings_TriggerKey;
 }
+
+export type ScrollAxis = 'horizontal' | 'vertical';

@@ -5,7 +5,7 @@ declare const chrome;
 //
 
 import defaultSettings from './default-settings';
-import { Settings } from './types';
+import { Settings, ScrollAxis } from './types';
 
 //
 // Variables
@@ -14,6 +14,8 @@ import { Settings } from './types';
 let pressedKeys = new Set<String>();
 let settings: Settings;
 let triggerKeyIsPressed = false;
+
+const overflowValuesThatEnableScrollbarsOnContentElements = ['auto', 'overlay', 'scroll'];
 
 //
 // Init
@@ -48,12 +50,52 @@ function attachWheelListener() {
     throw new Error(`Unknown mode '${settings.mode}'`);
 }
 
+function elementIsScrollable(element, axis: ScrollAxis): boolean {
+  const elementComputedStyle = window.getComputedStyle(element);
+
+  if (axis === 'horizontal') {
+    // if the element is as big as its content, it can't be scrolled (and doesn't need to)
+    if (element.scrollWidth === element.clientWidth)
+      return false;
+
+    // <body> and <html> elements are scrollable as long as their overflow content isn't hidden
+    if (element instanceof HTMLBodyElement || element instanceof HTMLHtmlElement)
+      return true;
+
+    // other elements are scrollable only when their 'overflow-<axis>' CSS attr has a value that enables scrollbars
+    return overflowValuesThatEnableScrollbarsOnContentElements.includes(elementComputedStyle.overflowX);
+  }
+  else {
+    // if the element is as big as its content, it can't be scrolled (and doesn't need to)
+    if (element.scrollHeight === element.clientHeight)
+      return false;
+
+    // <body> and <html> elements are scrollable as long as their overflow content isn't hidden
+    if (element instanceof HTMLBodyElement || element instanceof HTMLHtmlElement)
+      return true;
+
+    // other elements are scrollable only when their 'overflow-<axis>' CSS attr has a value that enables scrollbars
+    return overflowValuesThatEnableScrollbarsOnContentElements.includes(elementComputedStyle.overflowY);
+  }
+}
+
+/**
+ * @returns The first element in the `element`'s hierarchy (including the element itself) that has a scrollbar for the
+ * given `axis`, or `null` if none has any.
+ */
+function findScrollTarget(element, axis: ScrollAxis) {
+  if (elementIsScrollable(element, axis))
+    return element;
+  else if (element.parentElement)
+    return findScrollTarget(element.parentElement, axis);
+  return null;
+}
+
 function handleScroll(event: WheelEvent, speed: 'custom' | 'default') {
   event.preventDefault();
 
-  const horizontalScroll = pressedKeys.has('ShiftLeft') || pressedKeys.has('ShiftRight');
   const scrollAmount = (() => {
-    /* when scrolling to the bottom or to the right, `event.deltaY` will be a positive int ; when scrolling to the top or
+    /* When scrolling to the bottom or to the right, `event.deltaY` will be a positive int ; when scrolling to the top or
     to the left, it will be a negative int.
     During my tests `event.deltaX` never changed and was always `0`, but I think that's because my mouse has a
     unidirectional wheel, while some other mouses can be have a bidirectional wheel, that's why I'm checking it ‒ to
@@ -66,10 +108,18 @@ function handleScroll(event: WheelEvent, speed: 'custom' | 'default') {
       return scrollAmountDefault;
   })();
 
-  if (horizontalScroll)
-    window.scrollBy(scrollAmount, 0);
+  /* Use the first scrollable element in the target's hierachy's instead of `window` to allow to scroll faster not only
+  in the page itself but also in inner elements, like text areas or divs with overflow content. This also allows the
+  extension to work on websites like Trello where the scrollable area isn't the <body> nor <html> element but a child
+  element. */
+
+  const axis: ScrollAxis = (pressedKeys.has('ShiftLeft') || pressedKeys.has('ShiftRight')) ? 'horizontal' : 'vertical';
+  const scrollTarget = findScrollTarget(event.target, axis) || window; // if no scrollable element is found fallback to `window`
+
+  if (axis === 'horizontal')
+    scrollTarget.scrollBy(scrollAmount, 0);
   else
-    window.scrollBy(0, scrollAmount);
+    scrollTarget.scrollBy(0, scrollAmount);
 }
 
 function loadSettings(callback: () => void) {
