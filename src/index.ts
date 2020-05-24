@@ -52,25 +52,24 @@ function handleScroll(event: WheelEvent, speed: 'custom' | 'default') {
   event.preventDefault();
 
   const horizontalScroll = pressedKeys.has('ShiftLeft') || pressedKeys.has('ShiftRight');
-  const scrollAmountCustom = (() => {
+  const scrollAmount = (() => {
     /* when scrolling to the bottom or to the right, `event.deltaY` will be a positive int ; when scrolling to the top or
     to the left, it will be a negative int.
     During my tests `event.deltaX` never changed and was always `0`, but I think that's because my mouse has a
     unidirectional wheel, while some other mouses can be have a bidirectional wheel, that's why I'm checking it ‒ to
     [hopefully] support all possible use cases */
+    const scrollAmountDefault = event.deltaY || event.deltaX;
 
-    if (speed === 'custom') {
-      const scrollAmountDefault = (event.deltaY || event.deltaX);
+    if (speed === 'custom')
       return scrollAmountDefault * settings.scrollSpeedMultiplier;
-    }
-    else
-      return event.deltaY || event.deltaX;
+    else if (speed === 'default')
+      return scrollAmountDefault;
   })();
 
   if (horizontalScroll)
-    window.scrollBy(scrollAmountCustom, 0);
+    window.scrollBy(scrollAmount, 0);
   else
-    window.scrollBy(0, scrollAmountCustom);
+    window.scrollBy(0, scrollAmount);
 }
 
 function loadSettings(callback: () => void) {
