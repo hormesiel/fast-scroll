@@ -91,9 +91,11 @@ function loadSettings(callback: () => void) {
 }
 
 function onWheelModeAlways(event: WheelEvent) {
-  if (triggerKeyIsPressed)
+  // brackets are important here because of this: https://gist.github.com/flawyte/e7e39d1d48aa1d5e7512b21bb8429b1f
+  if (triggerKeyIsPressed) {
     if (settings.triggerKey === Settings.TriggerKey.ControlLeft)
       handleScroll(event, 'default'); // handle normal scroll by ourself since by default ControlLeft is used to zoom in/out on the page
+  }
   else
     handleScroll(event, 'custom');
 }
