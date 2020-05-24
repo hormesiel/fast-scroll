@@ -96,7 +96,7 @@ function onWheelModeAlways(event: WheelEvent) {
     if (settings.triggerKey === Settings.TriggerKey.ControlLeft)
       handleScroll(event, 'default'); // handle normal scroll by ourself since by default ControlLeft is used to zoom in/out on the page
   }
-  else
+  else if (!pressedKeys.has('ControlLeft')) // pass if ControlLeft is pressed to preserve default zoom in/out behavior
     handleScroll(event, 'custom');
 }
 
