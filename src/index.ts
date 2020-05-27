@@ -4,8 +4,8 @@ declare const chrome;
 // Imports
 //
 
-import defaultSettings from './default-settings';
 import { Settings, ScrollAxis } from './types';
+import defaultSettings from './settings/default-settings';
 import { urlMatchesAnyGlobOf } from './settings/ignored-urls';
 
 //

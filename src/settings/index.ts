@@ -4,7 +4,7 @@ declare const chrome;
 // Imports
 //
 
-import defaultSettings from './../default-settings';
+import defaultSettings from './default-settings';
 import { Settings, Settings_Mode, Settings_TriggerKey } from './../types';
 import './index.scss';
 

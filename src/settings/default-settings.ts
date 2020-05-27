@@ -1,4 +1,4 @@
-import { Settings } from './types';
+import { Settings } from '../types';
 
 const defaultSettings: Settings = {
   mode: Settings.Mode.OnTriggerKeyPressed,
