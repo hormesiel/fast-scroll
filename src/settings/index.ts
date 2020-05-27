@@ -14,6 +14,7 @@ import './index.scss';
 
 const i18n = chrome.i18n;
 
+let ignoredUrls: HTMLTextAreaElement;
 let mode: HTMLSelectElement;
 let modeDescription: HTMLParagraphElement;
 let modeWarning: HTMLParagraphElement;
@@ -54,15 +55,17 @@ function attachFormListeners() {
 function formValuesHaveChanged(): boolean {
   const formValues = getFormValues();
 
+  const ignoredUrlsChanged = formValues.ignoredUrls.toString() !== currentSettings.ignoredUrls.toString();
   const modeChanged = formValues.mode !== currentSettings.mode;
   const scrollSpeedMultiplierChanged = formValues.scrollSpeedMultiplier !== currentSettings.scrollSpeedMultiplier;
   const triggerKeyChanged = formValues.triggerKey !== currentSettings.triggerKey;
 
-  return modeChanged || scrollSpeedMultiplierChanged || triggerKeyChanged;
+  return ignoredUrlsChanged || modeChanged || scrollSpeedMultiplierChanged || triggerKeyChanged;
 }
 
 function getFormValues(): Settings {
   return {
+    ignoredUrls: ignoredUrls.value.trim().split('\n'),
     mode: Settings.Mode[mode.value],
     scrollSpeedMultiplier: Number(scrollSpeedMultiplier.value),
     triggerKey: Settings.TriggerKey[triggerKey.value],
@@ -100,6 +103,10 @@ function loadLocalizedStrings() {
 
   triggerKeyWarning.innerHTML = i18n.getMessage('Settings_TriggerKey_ControlLeft_warning');
 
+  // ignored urls
+  const ignoredUrlsLabel = document.getElementById('ignoredUrlsLabel');
+  ignoredUrlsLabel.innerHTML = i18n.getMessage('Settings_IgnoredUrls_label');
+
   // save button
   saveButton.innerHTML = i18n.getMessage('Settings_SaveButton_label');
 }
@@ -123,6 +130,7 @@ function queryElements() {
   scrollSpeedMultiplier = document.getElementById('scrollSpeedMultiplier') as HTMLInputElement;
   triggerKey = document.getElementById('triggerKey') as HTMLSelectElement;
   triggerKeyWarning = document.getElementById('triggerKeyWarning') as HTMLParagraphElement;
+  ignoredUrls = document.getElementById('ignoredUrls') as HTMLTextAreaElement;
 }
 
 function save() {
@@ -137,12 +145,14 @@ function save() {
 function setFormEnabled(enabled: boolean) {
   const disabled = !enabled;
 
+  ignoredUrls.disabled = disabled;
   mode.disabled = disabled;
   scrollSpeedMultiplier.disabled = disabled;
   triggerKey.disabled = disabled;
 }
 
 function setFormValues(settings: Settings) {
+  ignoredUrls.value = settings.ignoredUrls.join('\n');
   mode.value = settings.mode;
   scrollSpeedMultiplier.value = settings.scrollSpeedMultiplier.toString();
   triggerKey.value = settings.triggerKey;

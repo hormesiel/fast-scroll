@@ -8,6 +8,10 @@
     "description": "Titre de la page",
     "message": "Paramètres"
   },
+  "Settings_IgnoredUrls_label": {
+    "description": "Label for the text area that allows to specify a list of URL globs where not to run the extension",
+    "message": "Don't run the extension on these URLs"
+  },
   "Settings_Mode_label": {
     "description": "Libellé pour le menu déroulant qui permet de sélectionner le comportement par défaut de l'extension",
     "message": "Augmenter la vitesse de défilement"
@@ -22,7 +26,7 @@
   },
   "Settings_Mode_Always_warning": {
     "description": "Avertissement pour l'élément du menu déroulant pour toujours faire défiler plus vite",
-    "message": "Attention : Cela pourrait ne pas fonctionner sur certains sites et empêcher de faire défiler la page. Dans ce cas, vous pouvez ajouter ces sites à la liste des Sites exclus ci-dessous."
+    "message": "Attention : Cela pourrait ne pas fonctionner sur certains sites et empêcher de faire défiler la page. Dans ce cas, vous pouvez ajouter ces sites à la liste des URLs à ignorer ci-dessous."
   },
   "Settings_Mode_OnTriggerKeyPressed_label": {
     "description": "Libellé pour l'élement du menu déroulant pour faire défiler plus vite lorsque la touche de déclenchement est enfoncée",

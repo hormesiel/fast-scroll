@@ -6,6 +6,7 @@ declare const chrome;
 
 import defaultSettings from './default-settings';
 import { Settings, ScrollAxis } from './types';
+import { urlMatchesAnyGlobOf } from './settings/ignored-urls';
 
 //
 // Variables
@@ -25,6 +26,7 @@ loadSettings(() => {
   attachPageFocusLossListener();
   attachKeysListeners();
   attachWheelListener();
+  console.debug('[fast-scroll] ready');
 });
 
 //
@@ -33,7 +35,7 @@ loadSettings(() => {
 
 function attachPageFocusLossListener() {
   /* clear pressed keys when the page loses focus, because by default they stay pressed when tab-switching to another
-  OS window, which causes unexpected scrolling behavior */
+  OS window, which causes unexpected scrolling behavior when returning to the browser */
   window.addEventListener('blur', () => pressedKeys.clear());
 }
 
@@ -133,7 +135,10 @@ function loadSettings(callback: () => void) {
   // load saved settings
   chrome.storage.sync.get(defaultSettings, savedSettings => {
     settings = savedSettings;
-    callback();
+
+    // if current URL doesn't match any ignore glob
+    if (!urlMatchesAnyGlobOf(window.location.href, settings.ignoredUrls))
+      callback();
   });
 
   // listen to changes

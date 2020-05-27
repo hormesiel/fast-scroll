@@ -1,7 +1,12 @@
 import copy from 'rollup-plugin-copy';
+import commonjs from '@rollup/plugin-commonjs';
+import nodeBuiltinModules from 'rollup-plugin-node-builtins';
+import nodeGlobals from 'rollup-plugin-node-globals'; // (1)
 import resolve from '@rollup/plugin-node-resolve';
 import scss from 'rollup-plugin-scss';
 import typescript from '@rollup/plugin-typescript';
+
+/* (1) Required because the node global `process` is used somewhere in micromatch or one of its dependencies */
 
 const plugins = [
   copy({
@@ -12,6 +17,9 @@ const plugins = [
     ]
   }),
   resolve(),
+  commonjs(),
+  nodeGlobals(),
+  nodeBuiltinModules(),
   scss(),
   typescript(),
 ];
