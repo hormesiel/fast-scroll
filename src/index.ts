@@ -36,7 +36,10 @@ loadSettings(() => {
 function attachPageFocusLossListener() {
   /* clear pressed keys when the page loses focus, because by default they stay pressed when tab-switching to another
   OS window, which causes unexpected scrolling behavior when returning to the browser */
-  window.addEventListener('blur', () => pressedKeys.clear());
+  window.addEventListener('blur', () => {
+    pressedKeys.clear();
+    triggerKeyIsPressed = false;
+  });
 }
 
 function attachKeysListeners() {
