@@ -1,6 +1,26 @@
 //
-// Matter-based rules
+// Global rules
 //
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 85%;
+}
+
+p {
+  font-size: 85%;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+//
+// Helpers
+//
+
+.flex-column {
+  display: flex;
+    flex-direction: column;
+}
 
 .matter-select-filled {
   outline: none;
@@ -52,29 +72,60 @@
   }
 }
 
-//
-// Generic rules (classes)
-//
+.WarningMessage {
+  color: orange;
+  display: none;
 
-button {
-  margin-bottom: 2rem;
-  text-transform: uppercase;
+  &.is-visible {
+    display: inherit;
+  }
 }
 
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: inherit;
+//
+// Page content
+//
+
+#PageContent {
+  margin: auto;
+  max-width: 400px;
+
+  > * {
+    width: 100%;
+
+    & ~ * {
+      margin-top: 2rem;
+    }
+  }
 }
+
+//
+// Page title
+//
 
 h1 {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
-p {
-  font-size: 85%;
-  margin: 0;
-  margin-top: 0.5rem;
+//
+// Trigger key
+//
+
+select#triggerKey {
+  @extend .matter-select-filled;
 }
+
+//
+// Mode
+//
+
+select#mode {
+  @extend .matter-select-filled;
+}
+
+//
+// Ignored URLs
+//
 
 textarea {
   max-height: 350px; // Auto-size max
@@ -90,37 +141,12 @@ textarea {
   }
 }
 
-.flex-column {
-  display: flex;
-    flex-direction: column;
-}
-
-.Warning {
-  color: orange;
-  display: none;
-
-  &.is-visible {
-    display: inherit;
-  }
-}
-
 //
-// Specific rules (ids)
+// Save button
 //
 
-#content {
-  margin: auto;
-  max-width: 400px;
-
-  > * {
-    width: 100%;
-
-    & ~ * {
-      margin-top: 2rem;
-    }
-  }
-}
-
-#title {
-  text-align: center;
+button {
+  height: 2.5rem !important; // !important required to override matter value
+  margin-bottom: 2rem;
+  text-transform: uppercase;
 }

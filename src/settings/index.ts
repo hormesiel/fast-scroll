@@ -84,7 +84,7 @@ function getFormValues(): Settings {
 
 function loadLocalizedStrings() {
   // title
-  const title = document.getElementById('title');
+  const title = document.querySelector('h1');
   title.innerHTML = i18n.getMessage('Settings_title');
 
   // scroll speeed multiplier
