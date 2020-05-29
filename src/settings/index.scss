@@ -4,7 +4,7 @@
 
 button, input, select, textarea {
   font-family: inherit;
-  font-size: 85%;
+  font-size: 95% !important; // !important required to override matter value
 }
 
 p {
