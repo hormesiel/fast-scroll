@@ -10,7 +10,7 @@
   },
   "Settings_IgnoredUrls_label": {
     "description": "Label for the text area that allows to specify a list of URL globs where not to run the extension",
-    "message": "Don't run the extension on these URLs"
+    "message": "Disable the extension on these URLs"
   },
   "Settings_Mode_label": {
     "description": "Label for the dropdown menu that allows to select the extension's default behavior",
@@ -22,7 +22,7 @@
   },
   "Settings_Mode_Always_description": {
     "description": "Description for the dropdown menu item to always scroll faster",
-    "message": "In this mode, the scroll speed will always be increased except when the 'Key to press' is pressed."
+    "message": "In this mode, the scroll speed will always be increased <strong>except</strong> when the <em>Trigger key</em> is pressed."
   },
   "Settings_Mode_Always_warning": {
     "description": "Warning for the dropdown menu item to always scroll faster",
@@ -30,11 +30,11 @@
   },
   "Settings_Mode_OnTriggerKeyPressed_label": {
     "description": "Label for the dropdown menu item to scroll faster only when the trigger key is pressed",
-    "message": "When the 'Key to press' is pressed"
+    "message": "When the <em>Trigger key</em> is pressed"
   },
   "Settings_Mode_OnTriggerKeyPressed_description": {
     "description": "Description for the dropdown menu item to scroll faster only when the trigger key is pressed",
-    "message": "In this mode, the scroll speed will be increased only when the 'Key to press' is pressed."
+    "message": "In this mode, the scroll speed will be increased only when the <em>Trigger key</em> is pressed."
   },
   "Settings_SaveButton_label": {
     "description": "Save button's label",
@@ -46,7 +46,7 @@
   },
   "Settings_TriggerKey_label": {
     "description": "Label for the dropdown menu that allows to define the trigger key",
-    "message": "Key to press"
+    "message": "Trigger key"
   },
   "Settings_TriggerKey_AltLeft": {
     "description": "Left Alt key's name",
@@ -58,6 +58,6 @@
   },
   "Settings_TriggerKey_ControlLeft_warning": {
     "description": "Left Control key's warning messsage",
-    "message": "Warning : This will override this key's default behavior, which allows you to zoom in / out on websites using the mouse's wheel."
+    "message": "Warning : This will override this key's default behavior, which allows you to zoom in / out on websites using your mouse wheel."
   }
 }
