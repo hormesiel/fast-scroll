@@ -1,3 +1,100 @@
+//
+// Matter-based rules
+//
+
+.matter-select-filled {
+  outline: none;
+  position: relative; // for label positionning
+
+  // label
+
+  label {
+    color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+    display: flex;
+      align-items: center;
+    font-size: 75%;
+    height: 23px;
+    padding: 4px 12px 0;
+    position: absolute;
+    transition: color 0.2s;
+  }
+
+  // select
+
+  select {
+    background: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.04);
+    border: none;
+      border-bottom: solid 1px rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+      border-top: solid 26px transparent !important;
+    border-radius: 4px 4px 0 0;
+    outline: none;
+    padding: 0 9px 9px;
+    transition: 0.2s background;
+
+    &:disabled {
+      background: rgba(var(--matter-onsurface-rgb, 0, 0, 0), .24);
+
+      & + label {
+        color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), .38);
+      }
+    }
+    &:focus, &:focus:hover {
+      border-bottom: solid 2px RGBA(var(--matter-helper-theme));
+      padding-bottom: 8px;
+    }
+    &:focus + label {
+      color: RGB(var(--matter-helper-theme));
+    }
+    &:hover {
+      background: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.08);
+      border-bottom-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), .6);
+    }
+  }
+}
+
+//
+// Generic rules (classes)
+//
+
+button {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 85%;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+textarea {
+  max-height: 350px; // Auto-size max
+  min-height: 150px;
+
+  /* Only show placeholder text when textarea is focused and its label is floating, otherwise the label and the
+  placeholder would overlap when unfocused */
+  &::placeholder {
+    opacity: 0;
+  }
+  &:focus::placeholder {
+    opacity: 1;
+  }
+}
+
+.flex-column {
+  display: flex;
+    flex-direction: column;
+}
+
 .Warning {
   color: orange;
   display: none;
@@ -7,7 +104,23 @@
   }
 }
 
+//
+// Specific rules (ids)
+//
+
 #content {
   margin: auto;
   max-width: 400px;
+
+  > * {
+    width: 100%;
+
+    & ~ * {
+      margin-top: 2rem;
+    }
+  }
+}
+
+#title {
+  text-align: center;
 }

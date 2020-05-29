@@ -5,52 +5,59 @@
     <meta charset='utf-8'>
     <title>Settings - Fast Scroll</title>
 
+    <link rel='stylesheet' href='../libs/matter.min.css'>
     <link rel='stylesheet' href='index.css'>
     <script src='index.js'></script>
   </head>
 
-  <body>
+  <body class='matter-body1'>
     <div id='content'>
-      <h1 id='title'></h1>
+      <h1 id='title' class='matter-h3'></h1>
 
       <!-- Scroll speed multiplier -->
-      <div>
-        <label id='scrollSpeedMultiplierLabel' for='scrollSpeedMultiplier'></label>
-        <input id='scrollSpeedMultiplier' type='number' min='1' disabled>
+      <label class='matter-textfield-filled'>
+          <input id='scrollSpeedMultiplier' placeholder=' ' type='number' min='1' disabled />
+          <span id='scrollSpeedMultiplierLabel'>Textfield</span>
+      </label>
+
+      <!-- Trigger key -->
+      <div class='flex-column'>
+        <div class='flex-column matter-textfield-filled matter-select-filled'>
+          <select id='triggerKey' disabled>
+            <option id='triggerKeyAltLeftOptionLabel' value='AltLeft'></option>
+            <option id='triggerKeyControlLeftOptionLabel' value='ControlLeft'></option>
+          </select>
+          <label id='triggerKeyLabel'></label>
+        </div>
+        <p id='triggerKeyWarning' class='Warning'></p>
       </div>
 
       <!-- Mode -->
-      <div>
-        <label id='modeLabel'></label>
-        <select id='mode' disabled>
-          <option id='modeOnTriggerKeyPressed' value='OnTriggerKeyPressed'></option>
-          <option id='modeAlways' value='Always'></option>
-        </select>
+      <div class='flex-column'>
+        <!-- Matter doesn't offer out of the box CSS for <select> elements so I built one, which means `matter-select-filled*` rules come from our own `./index.css` file, not from matter's file -->
+        <!-- Add `matter-textfield-filled` class to inherit matter theme colors -->
+        <div class='flex-column matter-textfield-filled matter-select-filled'>
+          <select id='mode' disabled>
+            <option id='modeOnTriggerKeyPressed' value='OnTriggerKeyPressed'></option>
+            <option id='modeAlways' value='Always'></option>
+          </select>
+          <label id='modeLabel'></label>
+        </div>
         <p id='modeDescription'></p>
         <p id='modeWarning' class='Warning'></p>
       </div>
 
-      <!-- Trigger key -->
-      <div>
-        <label id='triggerKeyLabel'></label>
-        <select id='triggerKey' disabled>
-          <option id='triggerKeyAltLeftOptionLabel' value='AltLeft'></option>
-          <option id='triggerKeyControlLeftOptionLabel' value='ControlLeft'></option>
-        </select>
-        <p id='triggerKeyWarning' class='Warning'></p>
-      </div>
-
       <!-- Ignored URLs -->
-      <div>
-        <label id='ignoredUrlsLabel'></label>
+      <label class='matter-textfield-filled'>
         <textarea id='ignoredUrls' placeholder='www.example.com
 *.foo.com
 my-website.com/some/page
 ' disabled>
         </textarea>
-      </div>
+        <span id='ignoredUrlsLabel'></span>
+      </label>
 
-      <button id='saveButton' disabled></button>
+      <button id='saveButton' class='matter-button-contained' disabled></button>
     </div>
   </body>
 

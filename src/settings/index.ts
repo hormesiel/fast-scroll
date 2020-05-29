@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function attachFormListeners() {
   document.addEventListener('input', () => updateSaveButtonState());
 
+  ignoredUrls.addEventListener('input', event => autoSizeTextArea(event.target));
   mode.addEventListener('input', () => {
     updateModeDescription(Settings.Mode[mode.value]);
     updateModeWarning(Settings.Mode[mode.value]);
@@ -50,6 +51,15 @@ function attachFormListeners() {
   triggerKey.addEventListener('input', () => updateTriggerKeyWarning(Settings.TriggerKey[triggerKey.value]));
 
   saveButton.addEventListener('click', save);
+}
+
+// Source: https://stackoverflow.com/a/25621277/1276306
+function autoSizeTextArea(textArea) {
+  textArea.style.height = 'auto';
+
+  const borderBottomWidth = getComputedStyle(textArea).getPropertyValue('border-bottom-width');
+  const borderTopWidth = getComputedStyle(textArea).getPropertyValue('border-top-width');
+  textArea.style.height = `calc(${textArea.scrollHeight}px + ${borderTopWidth} + ${borderBottomWidth})`;
 }
 
 function formValuesHaveChanged(): boolean {
