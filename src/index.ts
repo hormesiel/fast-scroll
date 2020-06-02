@@ -26,7 +26,7 @@ loadSettings(() => {
   attachPageFocusLossListener();
   attachKeysListeners();
   attachWheelListener();
-  console.debug('[fast-scroll] ready');
+  console.debug('[fast-scroll] ready', window.location.href);
 });
 
 //
@@ -108,6 +108,15 @@ function elementIsScrollable(element, axis: ScrollAxis): boolean {
  * given `axis`, or `null` if none has any.
  */
 function findScrollTarget(element, axis: ScrollAxis) {
+  if (element === document.body) {
+    /* On some websites the <body> element is seen as scrollable by Fast Scroll but `body.scrollBy()` does nothing,
+    however as per my tests in all these cases `document.scrollingElement.scrollBy()` does work (with `scrollingElement`
+    being the <html> element). That's why we check if `document.scrollingElement` is scrollable before checking the
+    <body>. */
+    if (elementIsScrollable(document.scrollingElement, axis))
+      return document.scrollingElement;
+  }
+
   if (elementIsScrollable(element, axis))
     return element;
   else if (element.parentElement)
