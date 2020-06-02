@@ -51,6 +51,18 @@ function attachKeysListeners() {
     pressedKeys.delete(event.code);
     triggerKeyIsPressed = pressedKeys.has(settings.triggerKey);
   });
+
+  /* By default, on Windows (but not on Linux), Google Chrome uses the Alt Left key to focus the browser's menu button,
+  which interferes with Fast Scroll because the web page loses focus when Alt Left is released so you can't press it
+  multiple times in a row to scroll faster, you have to click on the page so it regains focus everytime. So we're
+  preventing this default behavior when Alt Left is used as the trigger key. */
+  const preventAltLeftDefault = settings.triggerKey === Settings.TriggerKey.AltLeft;
+  if (preventAltLeftDefault) {
+    window.addEventListener('keyup', event => {
+      if (event.code === Settings.TriggerKey.AltLeft)
+        event.preventDefault();
+    }, { passive: false });
+  }
 }
 
 function attachWheelListener() {
