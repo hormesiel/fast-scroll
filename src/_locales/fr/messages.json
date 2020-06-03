@@ -56,8 +56,16 @@
     "description": "Nom de la touche Ctrl Gauche",
     "message": "Ctrl Gauche"
   },
+  "Settings_TriggerKey_ShiftLeft": {
+    "description": "Nom de la touche Maj Gauche",
+    "message": "Maj Gauche"
+  },
   "Settings_TriggerKey_ControlLeft_warning": {
     "description": "Avertissement de la touche Ctrl Gauche",
     "message": "Attention : Cela va écraser le comportement par défaut de cette touche, qui permet de zoomer / dézoomer sur les sites web à l'aide de la molette."
+  },
+  "Settings_TriggerKey_ShiftLeft_warning": {
+    "description": "Avertissement de la touche Maj Gauche",
+    "message": "Attention : Cela va écraser le comportement par défaut de cette touche, qui permet de faire défiler la page horizontalement."
   }
 }

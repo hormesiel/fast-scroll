@@ -110,8 +110,8 @@ function loadLocalizedStrings() {
   triggerKeyAltLeftOptionLabel.innerHTML = i18n.getMessage('Settings_TriggerKey_AltLeft');
   const triggerKeyControlLeftOptionLabel = document.getElementById('triggerKeyControlLeftOptionLabel');
   triggerKeyControlLeftOptionLabel.innerHTML = i18n.getMessage('Settings_TriggerKey_ControlLeft');
-
-  triggerKeyWarning.innerHTML = i18n.getMessage('Settings_TriggerKey_ControlLeft_warning');
+  const triggerKeyShiftLeftOptionLabel = document.getElementById('triggerKeyShiftLeftOptionLabel');
+  triggerKeyShiftLeftOptionLabel.innerHTML = i18n.getMessage('Settings_TriggerKey_ShiftLeft');
 
   // ignored urls
   const ignoredUrlsLabel = document.getElementById('ignoredUrlsLabel');
@@ -184,6 +184,8 @@ function updateSaveButtonState() {
   saveButton.disabled = !formValuesHaveChanged();
 }
 
-function updateTriggerKeyWarning(mode: Settings_TriggerKey) {
-  triggerKeyWarning.classList.toggle('is-visible', mode === Settings.TriggerKey.ControlLeft);
+function updateTriggerKeyWarning(triggerKey: Settings_TriggerKey) {
+  const warningMessage = i18n.getMessage(`Settings_TriggerKey_${triggerKey}_warning`);
+  triggerKeyWarning.innerHTML = warningMessage;
+  triggerKeyWarning.classList.toggle('is-visible', warningMessage !== '');
 }

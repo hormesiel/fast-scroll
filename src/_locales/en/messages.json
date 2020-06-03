@@ -56,8 +56,16 @@
     "description": "Left Control key's name",
     "message": "Left Ctrl"
   },
+  "Settings_TriggerKey_ShiftLeft": {
+    "description": "Left Shift key's name",
+    "message": "Left Shift"
+  },
   "Settings_TriggerKey_ControlLeft_warning": {
     "description": "Left Control key's warning messsage",
     "message": "Warning : This will override this key's default behavior, which allows you to zoom in / out on websites using your mouse wheel."
+  },
+  "Settings_TriggerKey_ShiftLeft_warning": {
+    "description": "Left Control key's warning messsage",
+    "message": "Warning : This will override this key's default behavior, which allows you to scroll horizontally."
   }
 }

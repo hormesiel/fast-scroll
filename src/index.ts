@@ -146,7 +146,9 @@ function handleScroll(event: WheelEvent, speed: 'custom' | 'default') {
   extension to work on websites like Trello where the scrollable area isn't the <body> nor <html> element but a child
   element. */
 
-  const axis: ScrollAxis = (pressedKeys.has('ShiftLeft') || pressedKeys.has('ShiftRight')) ? 'horizontal' : 'vertical';
+  const axis: ScrollAxis = (settings.triggerKey !== Settings.TriggerKey.ShiftLeft
+      && (pressedKeys.has('ShiftLeft') || pressedKeys.has('ShiftRight')))
+    ? 'horizontal' : 'vertical';
   const scrollTarget = findScrollTarget(event.target, axis) || window; // if no scrollable element is found fallback to `window`
 
   if (axis === 'horizontal')
@@ -181,6 +183,8 @@ function onWheelModeAlways(event: WheelEvent) {
   if (triggerKeyIsPressed) {
     if (settings.triggerKey === Settings.TriggerKey.ControlLeft)
       handleScroll(event, 'default'); // handle normal scroll by ourself since by default ControlLeft is used to zoom in/out on the page
+    else if (settings.triggerKey === Settings.TriggerKey.ShiftLeft)
+      handleScroll(event, 'default'); // handle normal scroll by ourself since by default ShiftLeft is used to scroll horizontally
   }
   else if (!pressedKeys.has('ControlLeft')) // pass if ControlLeft is pressed to preserve default zoom in/out behavior
     handleScroll(event, 'custom');
