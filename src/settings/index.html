@@ -50,10 +50,9 @@
 
       <!-- Ignored URLs -->
       <label class='matter-textfield-filled'>
-        <textarea id='ignoredUrls' placeholder='www.example.com
-*.foo.com
-my-website.com/some/page
-' disabled>
+        <!-- source: https://stackoverflow.com/questions/7312623/insert-line-break-inside-placeholder-attribute-of-a-textarea -->
+        <textarea id='ignoredUrls' placeholder='www.example.com&#10;*.foo.com&#10;my-website.com/some/page' disabled>
+        </textarea>
         </textarea>
         <span id='ignoredUrlsLabel'></span>
       </label>
