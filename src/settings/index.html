@@ -10,54 +10,55 @@
     <script src='index.js'></script>
   </head>
 
-  <body class='matter-body1'>
-    <div id='PageContent'>
-      <h1 class='matter-h3'></h1>
-
-      <!-- Scroll speed multiplier -->
-      <label class='matter-textfield-filled'>
+  <body id='ExtensionBody' class='matter-body1'>
+    <div id="ExtensionContent" class="flex-column">
+      <div id='UserSettings' class="scroll-gradient">
+        <!-- Scroll speed multiplier -->
+        <label class='matter-textfield-filled'>
           <input id='scrollSpeedMultiplier' placeholder=' ' type='number' min='1' disabled />
           <span id='scrollSpeedMultiplierLabel'>Textfield</span>
-      </label>
+        </label>
 
-      <!-- Trigger key -->
-      <div class='flex-column'>
-        <div class='flex-column matter-textfield-filled matter-select-filled'>
-          <select id='triggerKey' disabled>
-            <option id='triggerKeyAltLeftOptionLabel' value='AltLeft'></option>
-            <option id='triggerKeyControlLeftOptionLabel' value='ControlLeft'></option>
-            <option id='triggerKeyShiftLeftOptionLabel' value='ShiftLeft'></option>
-          </select>
-          <label id='triggerKeyLabel'></label>
+        <!-- Trigger key -->
+        <div class='flex-column'>
+          <div class='flex-column matter-textfield-filled matter-select-filled'>
+            <select id='triggerKey' disabled>
+              <option id='triggerKeyAltLeftOptionLabel' value='AltLeft'></option>
+              <option id='triggerKeyControlLeftOptionLabel' value='ControlLeft'></option>
+              <option id='triggerKeyShiftLeftOptionLabel' value='ShiftLeft'></option>
+            </select>
+            <label id='triggerKeyLabel'></label>
+          </div>
+          <p id='triggerKeyWarning' class='WarningMessage'></p>
         </div>
-        <p id='triggerKeyWarning' class='WarningMessage'></p>
+
+        <!-- Mode -->
+        <div class='flex-column'>
+          <!-- Matter doesn't offer out of the box CSS for <select> elements so I built one, which means `matter-select-filled*` rules come from our own `./index.css` file, not from matter's file -->
+          <!-- Add `matter-textfield-filled` class to inherit matter theme colors -->
+          <div class='flex-column matter-textfield-filled matter-select-filled'>
+            <select id='mode' disabled>
+              <option id='modeOnTriggerKeyPressed' value='OnTriggerKeyPressed'></option>
+              <option id='modeAlways' value='Always'></option>
+            </select>
+            <label id='modeLabel'></label>
+          </div>
+          <p id='modeDescription'></p>
+          <p id='modeWarning' class='WarningMessage'></p>
+        </div>
+
+        <!-- Ignored URLs -->
+        <label class='matter-textfield-filled'>
+          <!-- source: https://stackoverflow.com/questions/7312623/insert-line-break-inside-placeholder-attribute-of-a-textarea -->
+          <textarea id='ignoredUrls' placeholder='www.example.com&#10;*.foo.com&#10;my-website.com/some/page' disabled>
+          </textarea>
+          <span id='ignoredUrlsLabel'></span>
+        </label>
       </div>
 
-      <!-- Mode -->
-      <div class='flex-column'>
-        <!-- Matter doesn't offer out of the box CSS for <select> elements so I built one, which means `matter-select-filled*` rules come from our own `./index.css` file, not from matter's file -->
-        <!-- Add `matter-textfield-filled` class to inherit matter theme colors -->
-        <div class='flex-column matter-textfield-filled matter-select-filled'>
-          <select id='mode' disabled>
-            <option id='modeOnTriggerKeyPressed' value='OnTriggerKeyPressed'></option>
-            <option id='modeAlways' value='Always'></option>
-          </select>
-          <label id='modeLabel'></label>
-        </div>
-        <p id='modeDescription'></p>
-        <p id='modeWarning' class='WarningMessage'></p>
+      <div class="save-button-container flex-column">
+        <button id='saveButton' class='matter-button-contained' disabled></button>
       </div>
-
-      <!-- Ignored URLs -->
-      <label class='matter-textfield-filled'>
-        <!-- source: https://stackoverflow.com/questions/7312623/insert-line-break-inside-placeholder-attribute-of-a-textarea -->
-        <textarea id='ignoredUrls' placeholder='www.example.com&#10;*.foo.com&#10;my-website.com/some/page' disabled>
-        </textarea>
-        </textarea>
-        <span id='ignoredUrlsLabel'></span>
-      </label>
-
-      <button id='saveButton' class='matter-button-contained' disabled></button>
     </div>
   </body>
 
