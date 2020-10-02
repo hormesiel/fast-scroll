@@ -130,6 +130,7 @@ select#mode {
 textarea {
   max-height: 350px; // Auto-size max
   min-height: 150px;
+  resize: none;
 
   /* Only show placeholder text when textarea is focused and its label is floating, otherwise the label and the
   placeholder would overlap when unfocused */
