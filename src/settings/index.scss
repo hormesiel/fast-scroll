@@ -102,10 +102,9 @@ p {
 
 #UserSettings {
   margin: auto;
-  height: 350px;
+  height: 500px;
   padding-right: 10px;
   overflow-x: hidden;
-  overflow-y: scroll;
   margin-bottom: 4rem;
 
   > * {
@@ -119,7 +118,7 @@ p {
 
 // source: https://css-scroll-shadows.now.sh/?bgColor=ffffff&shadowColor=858585&pxSize=8
 .scroll-gradient {
-  background: 
+  background:
     linear-gradient(#ffffff 33%, rgba(255,255,255, 0)),
     linear-gradient(rgba(255,255,255, 0), #ffffff 66%) 0 100%,
     radial-gradient(farthest-side at 50% 0, rgba(133,133,133, 0.5), rgba(0,0,0,0)),
