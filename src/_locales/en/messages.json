@@ -4,10 +4,6 @@
     "message": "Fast Scroll is a tiny but very handy extension that allows you to scroll through web pages way faster"
   },
 
-  "Settings_title": {
-    "description": "Page's title",
-    "message": "Settings"
-  },
   "Settings_IgnoredUrls_label": {
     "description": "Label for the text area that allows to specify a list of URL globs where not to run the extension",
     "message": "Disable the extension on these URLs"
