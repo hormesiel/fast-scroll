@@ -83,10 +83,6 @@ function getFormValues(): Settings {
 }
 
 function loadLocalizedStrings() {
-  // title
-  const title = document.querySelector('h1');
-  title.innerHTML = i18n.getMessage('Settings_title');
-
   // scroll speeed multiplier
   const scrollSpeedMultiplierLabel = document.getElementById('scrollSpeedMultiplierLabel');
   scrollSpeedMultiplierLabel.innerHTML = i18n.getMessage('Settings_ScrollSpeedMultiplier_label');

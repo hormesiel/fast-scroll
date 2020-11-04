@@ -4,10 +4,6 @@
     "message": "Fast Scroll est une petite extension bien pratique qui vous permet de faire défiler les pages web beaucoup plus rapidement"
   },
 
-  "Settings_title": {
-    "description": "Titre de la page",
-    "message": "Paramètres"
-  },
   "Settings_IgnoredUrls_label": {
     "description": "Libellé pour la zone de texte qui permet d'indiquer une liste d'URLs où l'extension ne doit pas être lancée",
     "message": "Désactiver l'extension sur ces URLs"
