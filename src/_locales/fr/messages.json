@@ -48,6 +48,10 @@
     "description": "Nom de la touche Alt Gauche",
     "message": "Alt Gauche"
   },
+  "Settings_TriggerKey_AltRight": {
+    "description": "Nom de la touche Alt Droite",
+    "message": "Alt Droite"
+  },
   "Settings_TriggerKey_ControlLeft": {
     "description": "Nom de la touche Ctrl Gauche",
     "message": "Ctrl Gauche"

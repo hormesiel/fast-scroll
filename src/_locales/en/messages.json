@@ -48,6 +48,10 @@
     "description": "Left Alt key's name",
     "message": "Left Alt"
   },
+  "Settings_TriggerKey_AltRight": {
+    "description": "Right Alt key's name",
+    "message": "Right Alt"
+  },
   "Settings_TriggerKey_ControlLeft": {
     "description": "Left Control key's name",
     "message": "Left Ctrl"

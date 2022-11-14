@@ -104,6 +104,8 @@ function loadLocalizedStrings() {
 
   const triggerKeyAltLeftOptionLabel = document.getElementById('triggerKeyAltLeftOptionLabel');
   triggerKeyAltLeftOptionLabel.innerHTML = i18n.getMessage('Settings_TriggerKey_AltLeft');
+  const triggerKeyAltRightOptionLabel = document.getElementById('triggerKeyAltRightOptionLabel');
+  triggerKeyAltRightOptionLabel.innerHTML = i18n.getMessage('Settings_TriggerKey_AltRight');
   const triggerKeyControlLeftOptionLabel = document.getElementById('triggerKeyControlLeftOptionLabel');
   triggerKeyControlLeftOptionLabel.innerHTML = i18n.getMessage('Settings_TriggerKey_ControlLeft');
   const triggerKeyShiftLeftOptionLabel = document.getElementById('triggerKeyShiftLeftOptionLabel');
