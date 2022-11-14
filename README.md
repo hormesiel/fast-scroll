@@ -1,5 +1,7 @@
 # Fast Scroll
 
+NOTE: PLEASE REFRESH YOUR OPEN TABS AFTER THE INSTALLATION FOR THE EXTENSION TO WORK.
+
 This small extension allows you to increase scroll speed on web pages either :
 - by pressing a key of your choice between Left Alt (the default), Right Alt, Left Ctrl and Left Shift
 - or without doing anything : scroll speed will always be increased, and you'll have the ability to decrease it temporarily by pressing one of the keys mentioned above
