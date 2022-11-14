@@ -20,7 +20,9 @@ const plugins = [
   commonjs(),
   nodeGlobals(),
   nodeBuiltinModules(),
-  scss(),
+  scss({
+    output: '_build/settings/index.css'
+  }),
   typescript(),
 ];
 
