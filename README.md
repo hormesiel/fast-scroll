@@ -15,3 +15,15 @@ If you have any feedback, feel free to ping me @flawyte on Twitter, send me an e
 ## Download
 
 Get it on the [Chrome Webstore](https://chrome.google.com/webstore/detail/fast-scroll/ecnjcglleblahonnenpaiofkabfakgdi)!
+
+## Reminders (for myself)
+
+### Zipping
+
+```bash
+FS_VERSION=X.Y.Z
+cd fast-scroll/_build
+zip -r fast-scroll-v$FS_VERSION.zip .
+mv fast-scroll-v$FS_VERSION.zip ../..
+cd ../..
+```
