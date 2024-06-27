@@ -159,7 +159,7 @@ function handleScroll(event: WheelEvent, speed: 'custom' | 'default') {
 
 function loadSettings(callback: () => void) {
   // load saved settings
-  chrome.storage.sync.get(defaultSettings, savedSettings => {
+  chrome.storage.sync.get(defaultSettings).then(savedSettings => {
     settings = savedSettings;
 
     // if current URL doesn't match any ignore glob

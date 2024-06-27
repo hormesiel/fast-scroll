@@ -120,11 +120,11 @@ function loadLocalizedStrings() {
 }
 
 function loadCurrentSettings() {
-  chrome.storage.sync.get(defaultSettings, settings => {
-    setFormValues(settings);
+  chrome.storage.sync.get(defaultSettings).then(savedSettings => {
+    setFormValues(savedSettings);
     setFormEnabled(true);
 
-    currentSettings = settings;
+    currentSettings = savedSettings;
     // cast `scrollSpeedMultiplier` to a Number since v2 stored a String
     currentSettings.scrollSpeedMultiplier = Number(currentSettings.scrollSpeedMultiplier);
   });
@@ -144,7 +144,7 @@ function queryElements() {
 function save() {
   const formValues = getFormValues();
 
-  chrome.storage.sync.set(formValues, () => {
+  chrome.storage.sync.set(formValues).then(() => {
     saveButton.disabled = true;
     currentSettings = formValues;
   });
