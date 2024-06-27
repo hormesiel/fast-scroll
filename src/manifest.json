@@ -15,7 +15,7 @@
       "js": ["index.js"]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "settings/index.html"
   },
   "homepage_url": "https://github.com/flawyte/fast-scroll",
