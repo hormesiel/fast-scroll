@@ -21,6 +21,6 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "micromatch": "^4.0.5"
+    "micromatch": "^4.0.8"
   }
 }
